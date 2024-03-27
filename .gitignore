@@ -17,6 +17,8 @@
 /wp-*.php
 /xmlrpc.php
 
+.idea
+creds.md
 # Configuration
 wp-config.php
 
