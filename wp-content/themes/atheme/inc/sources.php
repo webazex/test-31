@@ -11,3 +11,8 @@ function themeScripts() {
 	]);
 }
 add_action( 'wp_enqueue_scripts', 'themeScripts', 11 );
+
+function themeStyles() {
+	wp_enqueue_style( 'theme', get_stylesheet_uri() );
+}
+add_action( 'wp_enqueue_scripts', 'themeStyles' );
