@@ -63,7 +63,6 @@ class Core {
 	static function getDirectory($name){
 		$whiteListDir = (!empty(self::getWhiteListDir()) AND self::getWhiteListDir() !== false ) ?
 			self::getWhiteListDir() : self::refreshWhiteListDir();
-		var_dump($whiteListDir);
 		if(!empty($whiteListDir)){
 			$searchInArray = array_search($name, $whiteListDir);
 			if($searchInArray !== false){
