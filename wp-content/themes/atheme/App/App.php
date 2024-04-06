@@ -19,4 +19,8 @@ class App {
 			return Core::getDirectory('src'.DIRECTORY_SEPARATOR);
 		}
 	}
+
+	static function getIncludesDirectory(){
+		return Core::getDirectory('inc'.DIRECTORY_SEPARATOR);
+	}
 }
