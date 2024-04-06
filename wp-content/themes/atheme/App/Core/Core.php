@@ -64,7 +64,7 @@ class Core {
 		if(!empty($whiteListDir)){
 			$searchInArray = array_search($name, $whiteListDir);
 			if($searchInArray !== false){
-				return get_template_directory().DIRECTORY_SEPARATOR.$whiteListDir[2].DIRECTORY_SEPARATOR;
+				return get_template_directory().DIRECTORY_SEPARATOR.$whiteListDir[$searchInArray];
 			}else{
 				return get_template_directory().DIRECTORY_SEPARATOR;
 			}
