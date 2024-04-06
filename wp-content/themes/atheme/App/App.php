@@ -11,4 +11,12 @@ class App {
 	static function getAppDirectory(){
 		return Core::getDirectory('App'.DIRECTORY_SEPARATOR);
 	}
+
+	static function getSourcesDirectory(string $source = ""){
+		if(!empty($source)){
+			return Core::getDirectory('src'.DIRECTORY_SEPARATOR).$source.DIRECTORY_SEPARATOR;
+		}else{
+			return Core::getDirectory('src'.DIRECTORY_SEPARATOR);
+		}
+	}
 }
