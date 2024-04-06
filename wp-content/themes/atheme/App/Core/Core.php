@@ -14,8 +14,8 @@ class Core {
 				'App'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR,
 				'App'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'static'.DIRECTORY_SEPARATOR,
 				'App'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'gutenberg'.DIRECTORY_SEPARATOR.'sections'.DIRECTORY_SEPARATOR,
-				'App'.DIRECTORY_SEPARATOR.'inc'.DIRECTORY_SEPARATOR,
-				'App'.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR,
+				'inc'.DIRECTORY_SEPARATOR,
+				'src'.DIRECTORY_SEPARATOR,
 			]
 		);
 		self::$whitelist = self::getWhiteListDir();
@@ -63,6 +63,7 @@ class Core {
 	static function getDirectory($name){
 		$whiteListDir = (!empty(self::getWhiteListDir()) AND self::getWhiteListDir() !== false ) ?
 			self::getWhiteListDir() : self::refreshWhiteListDir();
+		var_dump($whiteListDir);
 		if(!empty($whiteListDir)){
 			$searchInArray = array_search($name, $whiteListDir);
 			if($searchInArray !== false){
