@@ -17,7 +17,8 @@
 					wp_nav_menu( [
 						'theme_location'  => 'header',
 						'echo'            => true,
-						'container' => false
+						'container' => false,
+						'fallback_cb' => '__return_empty_string'
 					] );
 				?>
 			</div>
