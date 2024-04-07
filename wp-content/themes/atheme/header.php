@@ -14,11 +14,11 @@
 		<div class="site-size__header-container">
 			<div class="header-container__header-menu">
 				<?php
-				wp_nav_menu( [
-					'theme_location'  => 'header',
-					'echo'            => true,
-					'container' => false
-				] );
+					wp_nav_menu( [
+						'theme_location'  => 'header',
+						'echo'            => true,
+						'container' => false
+					] );
 				?>
 			</div>
 		</div>
