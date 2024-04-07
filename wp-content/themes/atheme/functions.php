@@ -14,3 +14,6 @@ require_once App::getIncludesDirectory().'sources.php';
 if(function_exists('acf_register_block_type')){
 	require_once App::getIncludesDirectory().'gutenberg-blocks.php';
 }
+
+//cpt
+require_once App::getIncludesDirectory().'cpt.php';
