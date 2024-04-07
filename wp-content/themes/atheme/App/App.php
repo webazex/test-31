@@ -23,4 +23,20 @@ class App {
 	static function getIncludesDirectory(){
 		return Core::getDirectory('inc'.DIRECTORY_SEPARATOR);
 	}
+
+	static function getAcfGutenBlockSectionDir($name){
+		if(!empty($name)){
+			return Core::getAcfGutenBlocksDir().$name.DIRECTORY_SEPARATOR.'section.php';
+		}else{
+			return '';
+		}
+	}
+
+	static function getAcfGutenBlockDir($name){
+		if(!empty($name)){
+			return Core::getAcfGutenBlocksDir().$name.DIRECTORY_SEPARATOR.'block.php';
+		}else{
+			return '';
+		}
+	}
 }

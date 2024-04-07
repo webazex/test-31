@@ -9,3 +9,8 @@ require_once App::getIncludesDirectory().'supports.php';
 
 //assets
 require_once App::getIncludesDirectory().'sources.php';
+
+//acf gutenberg blocks
+if(function_exists('acf_register_block_type')){
+	require_once App::getIncludesDirectory().'gutenberg-blocks.php';
+}

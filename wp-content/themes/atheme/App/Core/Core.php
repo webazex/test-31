@@ -79,4 +79,12 @@ class Core {
 		return (!empty(self::getWhiteListDir()) AND self::getWhiteListDir() !== false ) ?
 			self::getWhiteListDir() : self::refreshWhiteListDir();
 	}
+
+	static function __getAcfGutenBlocksDir(){
+		return self::getDirectory('inc'.DIRECTORY_SEPARATOR).'acf-gutenberg-blocks'.DIRECTORY_SEPARATOR;
+	}
+
+	static function getAcfGutenBlocksDir() {
+		return self::__getAcfGutenBlocksDir();
+	}
 }
