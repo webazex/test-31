@@ -70,6 +70,28 @@ function registerCustomPostType()
 			'desc' => __('Тут заходяться ті роботи яким не було присвоєно жодної категорії', 'dwt')
 		]
 	);
+
+	//reviews
+	CPT::create([
+		'type' => 'reviews',
+		'name' => 'Відгуки',
+		's_name' => 'Відгук',
+		'add_new' => 'Додати відгук',
+		'add_new_item' => 'Заголовок відгуку',
+		'edit_item' => 'Редагувати відгук',
+		'new_item' => 'Новий відгук',
+		'view_item' => 'Перегляд відгуку',
+		'search_item' => 'Знайти відгук',
+		'not_found' => 'Відгук не знайдено',
+		'not_found_in_trash' => 'Відгук не знайдено',
+		'parent_item_colon' => '',
+		'menu_name' => 'Відгуки',
+		'desc' => 'Відгуки до робіт',
+		'public' => true,
+		'position' => 6,
+		'icon' => '',
+		'has_archive' => true,
+	], 'dwt'	);
 	flush_rewrite_rules();
 };
 
