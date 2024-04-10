@@ -64,7 +64,7 @@ class Core {
 		$whiteListDir = (!empty(self::getWhiteListDir()) AND self::getWhiteListDir() !== false ) ?
 			self::getWhiteListDir() : self::refreshWhiteListDir();
 		if(!empty($whiteListDir)){
-			$searchInArray = array_search($name, $whiteListDir);
+			$searchInArray = array_search($name, $whiteListDir, false);
 			if($searchInArray !== false){
 				return get_template_directory().DIRECTORY_SEPARATOR.$whiteListDir[$searchInArray];
 			}else{
