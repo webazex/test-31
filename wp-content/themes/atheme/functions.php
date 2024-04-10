@@ -1,5 +1,7 @@
 <?php
 use Webazex\App\App as App;
+
+use Webazex\App\Core\Core as Core;
 require_once get_template_directory().'/App/autoload.php';
 //menu
 require_once App::getIncludesDirectory().'registeredMenuArea.php';
@@ -17,3 +19,5 @@ if(function_exists('acf_register_block_type')){
 
 //cpt
 require_once App::getIncludesDirectory().'cpt.php';
+
+Core::getWorks();
