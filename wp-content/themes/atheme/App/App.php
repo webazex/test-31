@@ -39,4 +39,8 @@ class App {
 			return '';
 		}
 	}
+
+	static function getWorks($args = []):array{
+		return (!empty($args))? Core::getWorks($args) : Core::getWorks();
+	}
 }
