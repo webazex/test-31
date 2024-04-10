@@ -1,0 +1,35 @@
+.frontpage-slider {
+    width: 100%;
+    padding: 50px 0;
+    height: auto;
+    background-color: black;
+}
+.site-size__frontpage-slider-container {
+    width: 100%;
+    padding: 0 50px;
+}
+.frontpage-slider-container__slider {
+    width: 100%;
+    padding: 10px;
+}
+.slider__item {
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 0 0 12px 0 white;
+    margin: 0 10px;
+    padding: 200px;
+}
+.empty-section {
+    width: 100%;
+    padding: 50px 0;
+    background-color: black;
+}
+.empty-section-content__flex-center {
+    width: 100%;
+    min-height: 250px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
