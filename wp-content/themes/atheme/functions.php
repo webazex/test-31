@@ -20,4 +20,6 @@ if(function_exists('acf_register_block_type')){
 //cpt
 require_once App::getIncludesDirectory().'cpt.php';
 
-Core::getWorks();
+function getWorks($args = []):array {
+	return (!empty($args))? App::getWorks($args) : App::getWorks();
+}
