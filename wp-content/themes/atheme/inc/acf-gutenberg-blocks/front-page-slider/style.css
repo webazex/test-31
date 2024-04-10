@@ -23,6 +23,7 @@
     height: 450px;
 }
 .item__image-container > img {
+    max-width: 100%;
     width: auto;
     height: 100%;
     margin: 0 auto;
