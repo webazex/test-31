@@ -1,7 +1,7 @@
 $(document).ready(function (){
     $('.frontpage-slider-container__slider').slick({
         infinite: true,
-        slidesToShow: $('.frontpage-slider-container__slider').attr('data-count'),
+        slidesToShow: 3,
         slidesToScroll: 1
     });
 });

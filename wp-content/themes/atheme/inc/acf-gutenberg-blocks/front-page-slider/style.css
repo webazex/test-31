@@ -72,6 +72,20 @@
 .text-block__date span:last-child {
     margin-right: 0;
 }
+.frontpage-slider-container__title-h2 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.title-h2__text {
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+}
+.frontpage-slider-container__subtitle {
+    margin: 10px 0;
+    text-align: left;
+    color: white;
+}
 .empty-section {
     width: 100%;
     padding: 50px 0;
