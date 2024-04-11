@@ -10,7 +10,7 @@ add_action('acf/init', function (){
 		'icon' => 'book-alt',
 		'keywords' => ['Slider', 'slider', 'слайдер', 'Слайдер', 'Слайдер', 'слайдер'],
 		'post_types' => ['page'],
-		'mode' => 'auto',
+		'mode' => 'edit',
 		'align' => 'full',
 		'render_template' => App::getAcfGutenBlockSectionDir('front-page-slider'),
 		'enqueue_assets' => function(){
