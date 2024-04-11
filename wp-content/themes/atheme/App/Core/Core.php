@@ -89,7 +89,36 @@ class Core {
 	}
 
 	static function getWorks(array $args = []){
-		$obj = (!empty($args))? self::__getWorksObj($args) : self::__getWorksObj();
+		if(!empty($args)){
+			$newArgs = [];
+			foreach ( $args as $k => $v ) {
+				switch ($k){
+					case "count":
+						if(is_archive() OR is_search()){
+							$newArgs['posts_per_archive_page']  = (!empty($v)) ? intval($v) : get_option('posts_per_page');
+						}else{
+							$newArgs['posts_per_page']  = (!empty($v)) ? intval($v) : get_option('posts_per_page');
+						}
+						break;
+					case "page":
+						if(is_archive() OR is_search()){
+							$newArgs['posts_per_archive_page']  = (!empty($v)) ? intval($v) : get_option('posts_per_page');
+						}else{
+							$newArgs['posts_per_page']  = (!empty($v)) ? intval($v) : get_option('posts_per_page');
+						}
+						if(is_front_page()){
+							$newArgs['page'] = (!empty($v))? intval($v) : 1;
+						}else{
+							$newArgs['paged'] = (!empty($v))? intval($v) : 1;
+						}
+						break;
+
+				}
+			}
+			$obj = self::__getWorksObj($newArgs);
+		}else{
+			$obj = self::__getWorksObj();
+		}
 		return self::__fetchWorksObj($obj);
 	}
 
