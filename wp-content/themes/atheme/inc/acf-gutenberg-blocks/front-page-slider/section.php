@@ -1,11 +1,28 @@
 <?php
-$works = getWorks();
+$dataSection = get_field('frontpage-slider');
+$itemsCount = -1;
+if(boolval($dataSection['show-status']) === false){
+	$itemsCount = (!empty($dataSection['count'])) ? intval($dataSection['count']) : -1;
+}
+$works = getWorks(['count' => $itemsCount]);
 if ( ! empty($works ) ):
 	?>
 	<section class="frontpage-slider">
 		<div class="site-size">
 			<div class="site-size__frontpage-slider-container default-container-padding">
-				<div class="frontpage-slider-container__slider">
+				<?php if(!empty($dataSection['title'])):?>
+				<h2 class="frontpage-slider-container__title-h2">
+					<span class="title-h2__text">
+						<?php echo $dataSection['title']; ?>
+					</span>
+				</h2>
+				<?php endif;?>
+				<?php if(!empty($dataSection['subtitle'])):?>
+				<p class="frontpage-slider-container__subtitle">
+					<?php echo $dataSection['subtitle'];?>
+				</p>
+				<?php endif;?>
+				<div class="frontpage-slider-container__slider" data-count="<?php echo $itemsCount;?>">
 					<?php foreach($works as $work):?>
 						<a href="<?php echo $work['link']; ?>" class="slider__item">
 							<div class="item__image-container">
