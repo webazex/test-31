@@ -22,7 +22,7 @@ add_action('acf/init', function (){
 		},
 		'supports' => [
 			'align' => false,
-			'multiple' => false,
+			'multiple' => true,
 			'mode' => true
 		]
 	];
