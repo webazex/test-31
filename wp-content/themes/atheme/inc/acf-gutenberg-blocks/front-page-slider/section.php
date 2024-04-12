@@ -4,8 +4,8 @@ $itemsCount = -1;
 if(boolval($dataSection['show-status']) === false){
 	$itemsCount = (!empty($dataSection['count'])) ? intval($dataSection['count']) : -1;
 }
-$works = getAnyPosts($dataSection['pt'], ['count' => $itemsCount]);
-if ( ! empty($works ) ):
+$anyPosts = getAnyPosts($dataSection['pt'], ['count' => $itemsCount]);
+if ( ! empty($anyPosts ) ):
 	?>
 	<section class="frontpage-slider">
 		<div class="site-size">
@@ -23,39 +23,41 @@ if ( ! empty($works ) ):
 				</p>
 				<?php endif;?>
 				<div class="frontpage-slider-container__slider" data-count="<?php echo $itemsCount;?>">
-					<?php foreach($works as $work):?>
-						<a href="<?php echo $work['link']; ?>" class="slider__item">
+					<?php foreach($anyPosts as $anyPost):?>
+						<a href="<?php echo $anyPost['link']; ?>" class="slider__item">
 							<div class="item__image-container">
-								<?php if($work['src']):?>
-									<img src="<?php echo $work['src']; ?>" alt="<?php echo $work['title'];?>">
+								<?php if($anyPost['src']):?>
+									<img src="<?php echo $anyPost['src']; ?>" alt="<?php echo $anyPost['title'];?>">
 								<?php endif; ?>
 							</div>
 							<div class="item__text-block">
 								<span class="text-block__title">
-									<?php echo $work['title']; ?>
+									<?php echo $anyPost['title']; ?>
 								</span>
 								<p class="text-block__excerpt">
-									<?php echo $work['excerpt']; ?>
+									<?php echo $anyPost['excerpt']; ?>
 								</p>
-								<div class="text-block__property">
-									<div class="property__estimate">
-										<span><?php _e('Термін: ', 'dwt');?></span>
-										<span><?php echo $work['estimate'];?></span>
+								<?php if($dataSection['pt'] == "works"):?>
+									<div class="text-block__property">
+										<div class="property__estimate">
+											<span><?php _e('Термін: ', 'dwt');?></span>
+											<span><?php echo $anyPost['estimate'];?></span>
+										</div>
+										<div class="property__price">
+											<span><?php _e('Ціна: ', 'dwt');?></span>
+											<span><?php echo $anyPost['price'];?></span>
+										</div>
 									</div>
-									<div class="property__price">
-										<span><?php _e('Ціна: ', 'dwt');?></span>
-										<span><?php echo $work['price'];?></span>
-									</div>
-								</div>
+								<?php endif; ?>
 								<div class="text-block__date">
 									<span class="date__day">
-										<?php echo $work['date']['day'];?>
+										<?php echo $anyPost['date']['day'];?>
 									</span>
 									<span class="date__month">
-										<?php echo $work['date']['month'];?>
+										<?php echo $anyPost['date']['month'];?>
 									</span>
 									<span class="date__year">
-										<?php echo $work['date']['year'];?>
+										<?php echo $anyPost['date']['year'];?>
 									</span>
 								</div>
 							</div>
