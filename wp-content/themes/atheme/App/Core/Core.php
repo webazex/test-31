@@ -293,7 +293,7 @@ class Core {
 		switch ($type){
 			case "reviews":
 				return self::getReviews($args);
-			case "posts":
+			case "post":
 				return self::getPosts($args);
 			case "works":
 				return self::getWorks($args);
