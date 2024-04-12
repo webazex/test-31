@@ -40,7 +40,7 @@ class App {
 		}
 	}
 
-	static function getWorks($args = []):array{
-		return (!empty($args))? Core::getWorks($args) : Core::getWorks();
+	static function getAnyPosts(string $type, array $args = []){
+		return Core::getAnyPosts($type, $args);
 	}
 }
