@@ -4,7 +4,7 @@ $itemsCount = -1;
 if(boolval($dataSection['show-status']) === false){
 	$itemsCount = (!empty($dataSection['count'])) ? intval($dataSection['count']) : -1;
 }
-$works = getWorks(['count' => $itemsCount]);
+$works = getAnyPosts("works",['count' => $itemsCount]);
 if ( ! empty($works ) ):
 	?>
 	<section class="frontpage-slider">
