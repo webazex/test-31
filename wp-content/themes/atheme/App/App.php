@@ -46,9 +46,9 @@ class App {
 
 	static function getPlaceholderImgUrl(string $format = "webp"){
 		if(in_array($format, ['webp', 'png']) ){
-			return get_template_directory_uri().'src/placeholder.'.$format;
+			return get_template_directory_uri().'/src/placeholder.'.$format;
 		}else{
-			return get_template_directory_uri().'src/placeholder.webp';
+			return get_template_directory_uri().'/src/placeholder.webp';
 		}
 
 	}
