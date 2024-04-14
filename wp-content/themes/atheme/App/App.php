@@ -52,4 +52,7 @@ class App {
 		}
 
 	}
+	static function fetchAcfReviews( array $reviews){
+		return Core::__fetchAcfReviewsObj($reviews);
+	}
 }
