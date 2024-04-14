@@ -43,4 +43,13 @@ class App {
 	static function getAnyPosts(string $type, array $args = []){
 		return Core::getAnyPosts($type, $args);
 	}
+
+	static function getPlaceholderImgUrl(string $format = "webp"){
+		if(in_array($format, ['webp', 'png']) ){
+			return get_template_directory_uri().'src/placeholder.'.$format;
+		}else{
+			return get_template_directory_uri().'src/placeholder.webp';
+		}
+
+	}
 }
