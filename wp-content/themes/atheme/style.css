@@ -342,6 +342,12 @@ header, footer, main, section {
 .work-article-container__content a {
     color: #0b5fcc;
 }
+.site-size__container-page {
+    width: 100%;
+    padding: 0 30px;
+    min-height: 100vh;
+    height: auto;
+}
 @media (max-width: 768px) {
     .header-container__header-menu {
         justify-content: flex-end;
